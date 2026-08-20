@@ -1,0 +1,305 @@
+<!-- @dsCard group="Colors" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colour — Chaparral Creative Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Merriweather+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* ==========================================================================
+   Chaparral Creative — Design Tokens
+   Source: Canva Brand Kit "Chaparral Creative Brand Kit"
+   Values marked (canva) are verbatim from the brand kit.
+   Values marked (derived) complete the system for UI work.
+   ========================================================================== */
+
+
+:root {
+  /* --- Brand colour (canva) ------------------------------------------- */
+  --cc-ink:            #120b47;
+  --cc-blue:           #3498db;
+  --cc-slate:          #2c3e50;
+  --cc-sage:           #3f5d5f;
+
+  /* --- Neutrals (canva) ----------------------------------------------- */
+  --cc-white:          #ffffff;
+  --cc-bone:           #f1f1ef;
+  --cc-mist:           #ecf0f1;
+
+  /* --- Extended ramp (derived) ---------------------------------------- */
+  --cc-ink-90:         #231a56;
+  --cc-ink-70:         #453d74;
+  --cc-blue-hover:     #2b7fbd;
+  --cc-blue-press:     #22689b;
+  --cc-blue-tint:      #eaf4fb;
+  --cc-sage-tint:      #eaefee;
+  --cc-slate-60:       #697786;  /* 4.6:1 on white — AA */
+  --cc-slate-40:       #9aa6b2;  /* decorative + disabled only — below AA */
+  --cc-border:         #dfe4e6;
+
+  /* --- Status (derived, except info) ---------------------------------- */
+  --cc-success:        #2d7a59;
+  --cc-success-tint:   #e8f3ee;
+  --cc-warning:        #98641a;
+  --cc-warning-tint:   #fdf3e2;
+  --cc-danger:         #c0392b;
+  --cc-danger-tint:    #fbeceb;
+  --cc-info:           #3498db;
+  --cc-info-tint:      #eaf4fb;
+
+  /* --- Semantic aliases ------------------------------------------------ */
+  --cc-bg:             var(--cc-white);
+  --cc-bg-subtle:      var(--cc-bone);
+  --cc-bg-inverse:     var(--cc-ink);
+  --cc-text:           var(--cc-slate);
+  --cc-text-strong:    var(--cc-ink);
+  --cc-text-muted:     var(--cc-slate-60);
+  --cc-text-inverse:   var(--cc-white);
+  --cc-action:         var(--cc-blue);
+  --cc-accent:         var(--cc-sage);
+
+  /* --- Type families (canva) ------------------------------------------ */
+  --cc-font-title:      'Poppins', 'Montserrat', system-ui, sans-serif;
+  --cc-font-subtitle:   'Montserrat', system-ui, sans-serif;
+  --cc-font-subheading: 'Proxima Nova', 'Montserrat', system-ui, sans-serif;
+  --cc-font-body:       'Merriweather Sans', system-ui, sans-serif;
+  --cc-font-mono:       ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* --- Type sizes ------------------------------------------------------ */
+  --cc-size-display:    56px;  /* derived */
+  --cc-size-title:      42px;  /* canva   */
+  --cc-size-subtitle:   36px;  /* canva   */
+  --cc-size-subheading: 24px;  /* canva   */
+  --cc-size-body-lg:    18px;  /* derived */
+  --cc-size-body:       16px;  /* canva   */
+  --cc-size-body-sm:    14px;  /* derived */
+  --cc-size-caption:    12px;  /* derived */
+
+  /* --- Type rhythm ----------------------------------------------------- */
+  --cc-lh-tight:   1.15;
+  --cc-lh-snug:    1.25;
+  --cc-lh-normal:  1.6;
+  --cc-lh-relaxed: 1.75;
+  --cc-ls-tight:   -0.02em;
+  --cc-ls-wide:    0.08em;
+
+  /* --- Spacing (4px base) ---------------------------------------------- */
+  --cc-space-1:  4px;
+  --cc-space-2:  8px;
+  --cc-space-3:  12px;
+  --cc-space-4:  16px;
+  --cc-space-5:  20px;
+  --cc-space-6:  24px;
+  --cc-space-8:  32px;
+  --cc-space-10: 40px;
+  --cc-space-12: 48px;
+  --cc-space-16: 64px;
+  --cc-space-20: 80px;
+  --cc-space-24: 96px;
+
+  /* --- Radius ---------------------------------------------------------- */
+  --cc-radius-sm:   4px;
+  --cc-radius-md:   8px;
+  --cc-radius-lg:   12px;
+  --cc-radius-xl:   20px;
+  --cc-radius-full: 999px;
+
+  /* --- Elevation ------------------------------------------------------- */
+  --cc-shadow-sm: 0 1px 2px rgba(18, 11, 71, 0.06);
+  --cc-shadow-md: 0 2px 8px rgba(18, 11, 71, 0.08);
+  --cc-shadow-lg: 0 8px 24px rgba(18, 11, 71, 0.10);
+  --cc-shadow-xl: 0 16px 48px rgba(18, 11, 71, 0.14);
+
+  /* --- Motion ---------------------------------------------------------- */
+  --cc-ease:      cubic-bezier(0.2, 0, 0.2, 1);
+  --cc-dur-fast:  120ms;
+  --cc-dur-base:  200ms;
+  --cc-dur-slow:  320ms;
+
+  /* --- Layout ---------------------------------------------------------- */
+  --cc-container: 1200px;
+  --cc-gutter:    var(--cc-space-6);
+}
+
+/* --- Base type styles ------------------------------------------------- */
+.cc-display    { font-family: var(--cc-font-title); font-size: var(--cc-size-display); font-weight: 700; line-height: var(--cc-lh-tight); letter-spacing: var(--cc-ls-tight); color: var(--cc-text-strong); }
+.cc-title      { font-family: var(--cc-font-title); font-size: var(--cc-size-title); font-weight: 700; line-height: var(--cc-lh-tight); letter-spacing: var(--cc-ls-tight); color: var(--cc-text-strong); }
+.cc-subtitle   { font-family: var(--cc-font-subtitle); font-size: var(--cc-size-subtitle); font-weight: 600; line-height: var(--cc-lh-snug); color: var(--cc-text-strong); }
+.cc-subheading { font-family: var(--cc-font-subheading); font-size: var(--cc-size-subheading); font-weight: 600; line-height: var(--cc-lh-snug); color: var(--cc-text-strong); }
+.cc-body       { font-family: var(--cc-font-body); font-size: var(--cc-size-body); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text); }
+.cc-body-lg    { font-family: var(--cc-font-body); font-size: var(--cc-size-body-lg); font-weight: 400; line-height: var(--cc-lh-relaxed); color: var(--cc-text); }
+.cc-body-sm    { font-family: var(--cc-font-body); font-size: var(--cc-size-body-sm); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text); }
+.cc-caption    { font-family: var(--cc-font-body); font-size: var(--cc-size-caption); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text-muted); }
+.cc-eyebrow    { font-family: var(--cc-font-subtitle); font-size: var(--cc-size-caption); font-weight: 700; line-height: 1; letter-spacing: var(--cc-ls-wide); text-transform: uppercase; color: var(--cc-accent); }
+
+/* --- Focus ------------------------------------------------------------- */
+.cc-focusable:focus-visible,
+:where(button, a, input, select, textarea).cc-focus:focus-visible {
+  outline: 2px solid var(--cc-blue);
+  outline-offset: 2px;
+  border-radius: var(--cc-radius-sm);
+}
+
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin:0; background:var(--cc-bg); color:var(--cc-text); font-family:var(--cc-font-body); -webkit-font-smoothing:antialiased; }
+  .ds-wrap { max-width:1080px; margin:0 auto; padding:var(--cc-space-12) var(--cc-space-8) var(--cc-space-20); }
+  .ds-head { border-bottom:1px solid var(--cc-border); padding-bottom:var(--cc-space-6); margin-bottom:var(--cc-space-10); }
+  .ds-head h1 { font-family:var(--cc-font-title); font-size:34px; font-weight:700; letter-spacing:var(--cc-ls-tight); color:var(--cc-ink); margin:var(--cc-space-2) 0 var(--cc-space-3); }
+  .ds-head p { margin:0; max-width:62ch; font-size:var(--cc-size-body); line-height:var(--cc-lh-normal); color:var(--cc-text-muted); }
+  .ds-sec { margin-bottom:var(--cc-space-16); }
+  .ds-sec > h2 { font-family:var(--cc-font-subtitle); font-size:20px; font-weight:700; color:var(--cc-ink); margin:0 0 var(--cc-space-2); }
+  .ds-sec > .ds-note { margin:0 0 var(--cc-space-6); font-size:var(--cc-size-body-sm); line-height:var(--cc-lh-normal); color:var(--cc-text-muted); max-width:70ch; }
+  .ds-panel { border:1px solid var(--cc-border); border-radius:var(--cc-radius-lg); padding:var(--cc-space-8); background:var(--cc-white); }
+  .ds-panel + .ds-panel { margin-top:var(--cc-space-4); }
+  .ds-row { display:flex; flex-wrap:wrap; gap:var(--cc-space-4); align-items:center; }
+  .ds-col { display:flex; flex-direction:column; gap:var(--cc-space-4); }
+  .ds-label { font-family:var(--cc-font-subtitle); font-size:11px; font-weight:700; letter-spacing:var(--cc-ls-wide); text-transform:uppercase; color:var(--cc-slate-60); margin:0 0 var(--cc-space-3); }
+  code, .ds-code { font-family:var(--cc-font-mono); font-size:12px; background:var(--cc-mist); color:var(--cc-slate); padding:2px 6px; border-radius:var(--cc-radius-sm); }
+  .ds-do-dont { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--cc-space-4); }
+  .ds-do, .ds-dont { border-radius:var(--cc-radius-md); padding:var(--cc-space-4) var(--cc-space-5); font-size:var(--cc-size-body-sm); line-height:var(--cc-lh-normal); }
+  .ds-do { background:var(--cc-success-tint); border-left:3px solid var(--cc-success); }
+  .ds-dont { background:var(--cc-danger-tint); border-left:3px solid var(--cc-danger); }
+  .ds-do b, .ds-dont b { display:block; font-family:var(--cc-font-subtitle); font-size:11px; letter-spacing:var(--cc-ls-wide); text-transform:uppercase; margin-bottom:var(--cc-space-2); }
+  .ds-do b { color:var(--cc-success); } .ds-dont b { color:var(--cc-danger); }
+
+
+  .sw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:var(--cc-space-4); }
+  .sw { border:1px solid var(--cc-border); border-radius:var(--cc-radius-md); overflow:hidden; background:var(--cc-white); }
+  .sw-chip { height:92px; display:flex; align-items:flex-end; padding:var(--cc-space-3); font-family:var(--cc-font-mono); font-size:12px; letter-spacing:0.04em; }
+  .sw-meta { padding:var(--cc-space-3) var(--cc-space-4) var(--cc-space-4); display:flex; flex-direction:column; gap:6px; }
+  .sw-meta b { font-family:var(--cc-font-subtitle); font-size:14px; color:var(--cc-ink); }
+  .sw-meta code { align-self:flex-start; }
+  .sw-meta span { font-size:12px; line-height:1.45; color:var(--cc-text-muted); }
+  .pair-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:var(--cc-space-3); }
+  .pair { border:1px solid var(--cc-border); border-radius:var(--cc-radius-md); padding:var(--cc-space-5); }
+  .pair b { display:block; font-family:var(--cc-font-subtitle); font-size:16px; font-weight:600; margin-bottom:4px; }
+  .pair span { font-size:12px; opacity:0.75; font-family:var(--cc-font-mono); }
+
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <header class="ds-head">
+    <div class="cc-eyebrow">Chaparral Creative — Colors</div>
+    <h1>Colour</h1>
+    <p>Seven brand colours from the Canva kit, plus a derived interface ramp and status set. Contrast pairings are pre-checked against WCAG AA.</p>
+  </header>
+
+  <section class="ds-sec">
+    <h2>Core palette</h2>
+    <p class="ds-note">The seven colours defined in the Canva brand kit. These are the only colours that should appear in brand-facing work without a specific reason.</p>
+    <div class="sw-grid"><div class="sw">
+      <div class="sw-chip" style="background:#120b47;color:#ffffff;">#120b47</div>
+      <div class="sw-meta"><b>Chaparral Ink</b><code>var(--cc-ink)</code><span>Headlines, footers, dark sections</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#3498db;color:#ffffff;">#3498db</div>
+      <div class="sw-meta"><b>Signal Blue</b><code>var(--cc-blue)</code><span>Primary actions, links, active states</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#2c3e50;color:#ffffff;">#2c3e50</div>
+      <div class="sw-meta"><b>Slate</b><code>var(--cc-slate)</code><span>Body copy, secondary surfaces, nav</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#3f5d5f;color:#ffffff;">#3f5d5f</div>
+      <div class="sw-meta"><b>Roadrunner Sage</b><code>var(--cc-sage)</code><span>Logo mark, editorial accents</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#ecf0f1;color:#2c3e50;">#ecf0f1</div>
+      <div class="sw-meta"><b>Mist</b><code>var(--cc-mist)</code><span>Borders, dividers, disabled surfaces</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#f1f1ef;color:#2c3e50;">#f1f1ef</div>
+      <div class="sw-meta"><b>Bone</b><code>var(--cc-bone)</code><span>Alternating sections, subtle surfaces</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#ffffff;color:#2c3e50;">#ffffff</div>
+      <div class="sw-meta"><b>White</b><code>var(--cc-white)</code><span>Page background, card surfaces</span></div>
+    </div></div>
+  </section>
+
+  <section class="ds-sec">
+    <h2>Extended ramp</h2>
+    <p class="ds-note">Derived tints, shades and greys generated to support interface states (hover, pressed, disabled, borders). Not part of the Canva kit — use for UI only, never for logo or print work.</p>
+    <div class="sw-grid"><div class="sw">
+      <div class="sw-chip" style="background:#231a56;color:#ffffff;">#231a56</div>
+      <div class="sw-meta"><b>Ink 90</b><code>var(--cc-ink-90)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#453d74;color:#ffffff;">#453d74</div>
+      <div class="sw-meta"><b>Ink 70</b><code>var(--cc-ink-70)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#2b7fbd;color:#ffffff;">#2b7fbd</div>
+      <div class="sw-meta"><b>Blue Hover</b><code>var(--cc-blue-hover)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#22689b;color:#ffffff;">#22689b</div>
+      <div class="sw-meta"><b>Blue Pressed</b><code>var(--cc-blue-press)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#eaf4fb;color:#2c3e50;">#eaf4fb</div>
+      <div class="sw-meta"><b>Blue Tint</b><code>var(--cc-blue-tint)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#eaefee;color:#2c3e50;">#eaefee</div>
+      <div class="sw-meta"><b>Sage Tint</b><code>var(--cc-sage-tint)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#697786;color:#ffffff;">#697786</div>
+      <div class="sw-meta"><b>Slate 60</b><code>var(--cc-slate-60)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#9aa6b2;color:#ffffff;">#9aa6b2</div>
+      <div class="sw-meta"><b>Slate 40</b><code>var(--cc-slate-40)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#dfe4e6;color:#2c3e50;">#dfe4e6</div>
+      <div class="sw-meta"><b>Border</b><code>var(--cc-border)</code></div>
+    </div></div>
+  </section>
+
+  <section class="ds-sec">
+    <h2>Status colours</h2>
+    <p class="ds-note">Feedback states. Info reuses Signal Blue so system messaging stays on brand; the other three are derived and tuned to sit alongside the core palette rather than shout over it.</p>
+    <div class="sw-grid"><div class="sw">
+      <div class="sw-chip" style="background:#2d7a59;color:#ffffff;">#2d7a59</div>
+      <div class="sw-meta"><b>Success</b><code>var(--cc-success)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#e8f3ee;color:#2c3e50;">#e8f3ee</div>
+      <div class="sw-meta"><b>Success Tint</b><code>var(--cc-success-tint)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#98641a;color:#ffffff;">#98641a</div>
+      <div class="sw-meta"><b>Warning</b><code>var(--cc-warning)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#fdf3e2;color:#2c3e50;">#fdf3e2</div>
+      <div class="sw-meta"><b>Warning Tint</b><code>var(--cc-warning-tint)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#c0392b;color:#ffffff;">#c0392b</div>
+      <div class="sw-meta"><b>Danger</b><code>var(--cc-danger)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#fbeceb;color:#2c3e50;">#fbeceb</div>
+      <div class="sw-meta"><b>Danger Tint</b><code>var(--cc-danger-tint)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#3498db;color:#ffffff;">#3498db</div>
+      <div class="sw-meta"><b>Info</b><code>var(--cc-info)</code></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#eaf4fb;color:#2c3e50;">#eaf4fb</div>
+      <div class="sw-meta"><b>Info Tint</b><code>var(--cc-info-tint)</code></div>
+    </div></div>
+  </section>
+
+  <section class="ds-sec">
+    <h2>Contrast &amp; pairing</h2>
+    <p class="ds-note">Measured ratios, not estimates. Everything above the rule meets WCAG AA for body text; the last two are constrained. Slate 40 sits below AA on purpose — it is for disabled controls and decorative rules, which WCAG exempts, and must never carry text a user has to read.</p>
+    <div class="pair-grid">
+      <div class="pair" style="background:#ffffff;color:#120b47;"><b>Ink on White</b><span>18.0:1 — AAA, any size</span></div>
+      <div class="pair" style="background:#ffffff;color:#2c3e50;"><b>Slate on White</b><span>11.0:1 — AAA, any size</span></div>
+      <div class="pair" style="background:#ffffff;color:#3f5d5f;"><b>Sage on White</b><span>7.1:1 — AAA, any size</span></div>
+      <div class="pair" style="background:#ffffff;color:#697786;"><b>Slate 60 on White</b><span>4.6:1 — AA, any size</span></div>
+      <div class="pair" style="background:#120b47;color:#ffffff;"><b>White on Ink</b><span>18.0:1 — AAA, any size</span></div>
+      <div class="pair" style="background:#f1f1ef;color:#2c3e50;"><b>Slate on Bone</b><span>9.7:1 — AAA, any size</span></div>
+      <div class="pair" style="background:#3498db;color:#ffffff;"><b>White on Signal Blue</b><span>3.2:1 — large text / UI only</span></div>
+      <div class="pair" style="background:#ffffff;color:#9aa6b2;"><b>Slate 40 on White</b><span>2.5:1 — decorative &amp; disabled only</span></div>
+    </div>
+    <div class="ds-do-dont" style="margin-top:24px;">
+      <div class="ds-do"><b>Do</b>Use Signal Blue as a fill behind white text at 18px+ or on buttons and chips, where WCAG treats it as a UI component.</div>
+      <div class="ds-dont"><b>Don't</b>Set body copy in Signal Blue on white, or white body copy on Signal Blue — it fails AA at 16px.</div>
+      <div class="ds-do"><b>Do</b>Use Slate 60 <code>#697786</code> for helper text, captions and placeholders. It is the lightest grey that still passes AA.</div>
+      <div class="ds-dont"><b>Don't</b>Reach for Slate 40 to make text "quieter". If it needs to be readable, it needs 4.5:1.</div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
