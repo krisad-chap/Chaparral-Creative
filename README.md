@@ -2,7 +2,7 @@
 
 The single source of truth for how Chaparral Creative, LLC looks, sounds and behaves — in a form both people and AI tools can read.
 
-**Live design system:** synced to [Claude Design](https://claude.ai/design) as *Chaparral Creative Design System*.
+Every preview page is a standalone HTML file with a `@dsCard` marker on line one, so the `design-system/` folder can be pushed into a [Claude Design](https://claude.ai/design) project as-is.
 
 ---
 
@@ -14,7 +14,7 @@ brand/
   tokens.css           The same tokens as CSS custom properties (drop-in for any web project)
   components.css       The component library. Requires tokens.css. Prefix: .cc-
   guidelines.md        Brand story, voice, tone, and written-content rules
-  assets/              Logo files (see assets/README.md — masters live in Canva)
+  assets/              Logo lockups as SVG — horizontal, stacked, icon
 
 design-system/
   foundations/
@@ -51,6 +51,8 @@ Every `.html` file is standalone — open it directly in a browser, no build ste
 | Subtitle | Montserrat | 36 |
 | Subheading | Proxima Nova *(web fallback: Montserrat)* | 24 |
 | Body | Merriweather Sans | 16 |
+
+**Logos** — `brand/assets/logo-horizontal.svg` (primary), `logo-stacked.svg`, `logo-icon.svg`. All vector, all `fill="currentColor"`, so one file covers every colourway.
 
 ---
 
