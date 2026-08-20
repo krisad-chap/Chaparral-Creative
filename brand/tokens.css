@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Chaparral Creative — Design Tokens
+   Source: Canva Brand Kit "Chaparral Creative Brand Kit"
+   Values marked (canva) are verbatim from the brand kit.
+   Values marked (derived) complete the system for UI work.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Merriweather+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --- Brand colour (canva) ------------------------------------------- */
+  --cc-ink:            #120b47;
+  --cc-blue:           #3498db;
+  --cc-slate:          #2c3e50;
+  --cc-sage:           #3f5d5f;
+
+  /* --- Neutrals (canva) ----------------------------------------------- */
+  --cc-white:          #ffffff;
+  --cc-bone:           #f1f1ef;
+  --cc-mist:           #ecf0f1;
+
+  /* --- Extended ramp (derived) ---------------------------------------- */
+  --cc-ink-90:         #231a56;
+  --cc-ink-70:         #453d74;
+  --cc-blue-hover:     #2b7fbd;
+  --cc-blue-press:     #22689b;
+  --cc-blue-tint:      #eaf4fb;
+  --cc-sage-tint:      #eaefee;
+  --cc-slate-60:       #697786;  /* 4.6:1 on white — AA */
+  --cc-slate-40:       #9aa6b2;  /* decorative + disabled only — below AA */
+  --cc-border:         #dfe4e6;
+
+  /* --- Status (derived, except info) ---------------------------------- */
+  --cc-success:        #2d7a59;
+  --cc-success-tint:   #e8f3ee;
+  --cc-warning:        #98641a;
+  --cc-warning-tint:   #fdf3e2;
+  --cc-danger:         #c0392b;
+  --cc-danger-tint:    #fbeceb;
+  --cc-info:           #3498db;
+  --cc-info-tint:      #eaf4fb;
+
+  /* --- Semantic aliases ------------------------------------------------ */
+  --cc-bg:             var(--cc-white);
+  --cc-bg-subtle:      var(--cc-bone);
+  --cc-bg-inverse:     var(--cc-ink);
+  --cc-text:           var(--cc-slate);
+  --cc-text-strong:    var(--cc-ink);
+  --cc-text-muted:     var(--cc-slate-60);
+  --cc-text-inverse:   var(--cc-white);
+  --cc-action:         var(--cc-blue);
+  --cc-accent:         var(--cc-sage);
+
+  /* --- Type families (canva) ------------------------------------------ */
+  --cc-font-title:      'Poppins', 'Montserrat', system-ui, sans-serif;
+  --cc-font-subtitle:   'Montserrat', system-ui, sans-serif;
+  --cc-font-subheading: 'Proxima Nova', 'Montserrat', system-ui, sans-serif;
+  --cc-font-body:       'Merriweather Sans', system-ui, sans-serif;
+  --cc-font-mono:       ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* --- Type sizes ------------------------------------------------------ */
+  --cc-size-display:    56px;  /* derived */
+  --cc-size-title:      42px;  /* canva   */
+  --cc-size-subtitle:   36px;  /* canva   */
+  --cc-size-subheading: 24px;  /* canva   */
+  --cc-size-body-lg:    18px;  /* derived */
+  --cc-size-body:       16px;  /* canva   */
+  --cc-size-body-sm:    14px;  /* derived */
+  --cc-size-caption:    12px;  /* derived */
+
+  /* --- Type rhythm ----------------------------------------------------- */
+  --cc-lh-tight:   1.15;
+  --cc-lh-snug:    1.25;
+  --cc-lh-normal:  1.6;
+  --cc-lh-relaxed: 1.75;
+  --cc-ls-tight:   -0.02em;
+  --cc-ls-wide:    0.08em;
+
+  /* --- Spacing (4px base) ---------------------------------------------- */
+  --cc-space-1:  4px;
+  --cc-space-2:  8px;
+  --cc-space-3:  12px;
+  --cc-space-4:  16px;
+  --cc-space-5:  20px;
+  --cc-space-6:  24px;
+  --cc-space-8:  32px;
+  --cc-space-10: 40px;
+  --cc-space-12: 48px;
+  --cc-space-16: 64px;
+  --cc-space-20: 80px;
+  --cc-space-24: 96px;
+
+  /* --- Radius ---------------------------------------------------------- */
+  --cc-radius-sm:   4px;
+  --cc-radius-md:   8px;
+  --cc-radius-lg:   12px;
+  --cc-radius-xl:   20px;
+  --cc-radius-full: 999px;
+
+  /* --- Elevation ------------------------------------------------------- */
+  --cc-shadow-sm: 0 1px 2px rgba(18, 11, 71, 0.06);
+  --cc-shadow-md: 0 2px 8px rgba(18, 11, 71, 0.08);
+  --cc-shadow-lg: 0 8px 24px rgba(18, 11, 71, 0.10);
+  --cc-shadow-xl: 0 16px 48px rgba(18, 11, 71, 0.14);
+
+  /* --- Motion ---------------------------------------------------------- */
+  --cc-ease:      cubic-bezier(0.2, 0, 0.2, 1);
+  --cc-dur-fast:  120ms;
+  --cc-dur-base:  200ms;
+  --cc-dur-slow:  320ms;
+
+  /* --- Layout ---------------------------------------------------------- */
+  --cc-container: 1200px;
+  --cc-gutter:    var(--cc-space-6);
+}
+
+/* --- Base type styles ------------------------------------------------- */
+.cc-display    { font-family: var(--cc-font-title); font-size: var(--cc-size-display); font-weight: 700; line-height: var(--cc-lh-tight); letter-spacing: var(--cc-ls-tight); color: var(--cc-text-strong); }
+.cc-title      { font-family: var(--cc-font-title); font-size: var(--cc-size-title); font-weight: 700; line-height: var(--cc-lh-tight); letter-spacing: var(--cc-ls-tight); color: var(--cc-text-strong); }
+.cc-subtitle   { font-family: var(--cc-font-subtitle); font-size: var(--cc-size-subtitle); font-weight: 600; line-height: var(--cc-lh-snug); color: var(--cc-text-strong); }
+.cc-subheading { font-family: var(--cc-font-subheading); font-size: var(--cc-size-subheading); font-weight: 600; line-height: var(--cc-lh-snug); color: var(--cc-text-strong); }
+.cc-body       { font-family: var(--cc-font-body); font-size: var(--cc-size-body); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text); }
+.cc-body-lg    { font-family: var(--cc-font-body); font-size: var(--cc-size-body-lg); font-weight: 400; line-height: var(--cc-lh-relaxed); color: var(--cc-text); }
+.cc-body-sm    { font-family: var(--cc-font-body); font-size: var(--cc-size-body-sm); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text); }
+.cc-caption    { font-family: var(--cc-font-body); font-size: var(--cc-size-caption); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text-muted); }
+.cc-eyebrow    { font-family: var(--cc-font-subtitle); font-size: var(--cc-size-caption); font-weight: 700; line-height: 1; letter-spacing: var(--cc-ls-wide); text-transform: uppercase; color: var(--cc-accent); }
+
+/* --- Focus ------------------------------------------------------------- */
+.cc-focusable:focus-visible,
+:where(button, a, input, select, textarea).cc-focus:focus-visible {
+  outline: 2px solid var(--cc-blue);
+  outline-offset: 2px;
+  border-radius: var(--cc-radius-sm);
+}
