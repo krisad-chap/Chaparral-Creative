@@ -1,0 +1,221 @@
+<!-- @dsCard group="Layout" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spacing, radius &amp; elevation — Chaparral Creative Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Merriweather+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* ==========================================================================
+   Chaparral Creative — Design Tokens
+   Source: Canva Brand Kit "Chaparral Creative Brand Kit"
+   Values marked (canva) are verbatim from the brand kit.
+   Values marked (derived) complete the system for UI work.
+   ========================================================================== */
+
+
+:root {
+  /* --- Brand colour (canva) ------------------------------------------- */
+  --cc-ink:            #120b47;
+  --cc-blue:           #3498db;
+  --cc-slate:          #2c3e50;
+  --cc-sage:           #3f5d5f;
+
+  /* --- Neutrals (canva) ----------------------------------------------- */
+  --cc-white:          #ffffff;
+  --cc-bone:           #f1f1ef;
+  --cc-mist:           #ecf0f1;
+
+  /* --- Extended ramp (derived) ---------------------------------------- */
+  --cc-ink-90:         #231a56;
+  --cc-ink-70:         #453d74;
+  --cc-blue-hover:     #2b7fbd;
+  --cc-blue-press:     #22689b;
+  --cc-blue-tint:      #eaf4fb;
+  --cc-sage-tint:      #eaefee;
+  --cc-slate-60:       #697786;  /* 4.6:1 on white — AA */
+  --cc-slate-40:       #9aa6b2;  /* decorative + disabled only — below AA */
+  --cc-border:         #dfe4e6;
+
+  /* --- Status (derived, except info) ---------------------------------- */
+  --cc-success:        #2d7a59;
+  --cc-success-tint:   #e8f3ee;
+  --cc-warning:        #98641a;
+  --cc-warning-tint:   #fdf3e2;
+  --cc-danger:         #c0392b;
+  --cc-danger-tint:    #fbeceb;
+  --cc-info:           #3498db;
+  --cc-info-tint:      #eaf4fb;
+
+  /* --- Semantic aliases ------------------------------------------------ */
+  --cc-bg:             var(--cc-white);
+  --cc-bg-subtle:      var(--cc-bone);
+  --cc-bg-inverse:     var(--cc-ink);
+  --cc-text:           var(--cc-slate);
+  --cc-text-strong:    var(--cc-ink);
+  --cc-text-muted:     var(--cc-slate-60);
+  --cc-text-inverse:   var(--cc-white);
+  --cc-action:         var(--cc-blue);
+  --cc-accent:         var(--cc-sage);
+
+  /* --- Type families (canva) ------------------------------------------ */
+  --cc-font-title:      'Poppins', 'Montserrat', system-ui, sans-serif;
+  --cc-font-subtitle:   'Montserrat', system-ui, sans-serif;
+  --cc-font-subheading: 'Proxima Nova', 'Montserrat', system-ui, sans-serif;
+  --cc-font-body:       'Merriweather Sans', system-ui, sans-serif;
+  --cc-font-mono:       ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* --- Type sizes ------------------------------------------------------ */
+  --cc-size-display:    56px;  /* derived */
+  --cc-size-title:      42px;  /* canva   */
+  --cc-size-subtitle:   36px;  /* canva   */
+  --cc-size-subheading: 24px;  /* canva   */
+  --cc-size-body-lg:    18px;  /* derived */
+  --cc-size-body:       16px;  /* canva   */
+  --cc-size-body-sm:    14px;  /* derived */
+  --cc-size-caption:    12px;  /* derived */
+
+  /* --- Type rhythm ----------------------------------------------------- */
+  --cc-lh-tight:   1.15;
+  --cc-lh-snug:    1.25;
+  --cc-lh-normal:  1.6;
+  --cc-lh-relaxed: 1.75;
+  --cc-ls-tight:   -0.02em;
+  --cc-ls-wide:    0.08em;
+
+  /* --- Spacing (4px base) ---------------------------------------------- */
+  --cc-space-1:  4px;
+  --cc-space-2:  8px;
+  --cc-space-3:  12px;
+  --cc-space-4:  16px;
+  --cc-space-5:  20px;
+  --cc-space-6:  24px;
+  --cc-space-8:  32px;
+  --cc-space-10: 40px;
+  --cc-space-12: 48px;
+  --cc-space-16: 64px;
+  --cc-space-20: 80px;
+  --cc-space-24: 96px;
+
+  /* --- Radius ---------------------------------------------------------- */
+  --cc-radius-sm:   4px;
+  --cc-radius-md:   8px;
+  --cc-radius-lg:   12px;
+  --cc-radius-xl:   20px;
+  --cc-radius-full: 999px;
+
+  /* --- Elevation ------------------------------------------------------- */
+  --cc-shadow-sm: 0 1px 2px rgba(18, 11, 71, 0.06);
+  --cc-shadow-md: 0 2px 8px rgba(18, 11, 71, 0.08);
+  --cc-shadow-lg: 0 8px 24px rgba(18, 11, 71, 0.10);
+  --cc-shadow-xl: 0 16px 48px rgba(18, 11, 71, 0.14);
+
+  /* --- Motion ---------------------------------------------------------- */
+  --cc-ease:      cubic-bezier(0.2, 0, 0.2, 1);
+  --cc-dur-fast:  120ms;
+  --cc-dur-base:  200ms;
+  --cc-dur-slow:  320ms;
+
+  /* --- Layout ---------------------------------------------------------- */
+  --cc-container: 1200px;
+  --cc-gutter:    var(--cc-space-6);
+}
+
+/* --- Base type styles ------------------------------------------------- */
+.cc-display    { font-family: var(--cc-font-title); font-size: var(--cc-size-display); font-weight: 700; line-height: var(--cc-lh-tight); letter-spacing: var(--cc-ls-tight); color: var(--cc-text-strong); }
+.cc-title      { font-family: var(--cc-font-title); font-size: var(--cc-size-title); font-weight: 700; line-height: var(--cc-lh-tight); letter-spacing: var(--cc-ls-tight); color: var(--cc-text-strong); }
+.cc-subtitle   { font-family: var(--cc-font-subtitle); font-size: var(--cc-size-subtitle); font-weight: 600; line-height: var(--cc-lh-snug); color: var(--cc-text-strong); }
+.cc-subheading { font-family: var(--cc-font-subheading); font-size: var(--cc-size-subheading); font-weight: 600; line-height: var(--cc-lh-snug); color: var(--cc-text-strong); }
+.cc-body       { font-family: var(--cc-font-body); font-size: var(--cc-size-body); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text); }
+.cc-body-lg    { font-family: var(--cc-font-body); font-size: var(--cc-size-body-lg); font-weight: 400; line-height: var(--cc-lh-relaxed); color: var(--cc-text); }
+.cc-body-sm    { font-family: var(--cc-font-body); font-size: var(--cc-size-body-sm); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text); }
+.cc-caption    { font-family: var(--cc-font-body); font-size: var(--cc-size-caption); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text-muted); }
+.cc-eyebrow    { font-family: var(--cc-font-subtitle); font-size: var(--cc-size-caption); font-weight: 700; line-height: 1; letter-spacing: var(--cc-ls-wide); text-transform: uppercase; color: var(--cc-accent); }
+
+/* --- Focus ------------------------------------------------------------- */
+.cc-focusable:focus-visible,
+:where(button, a, input, select, textarea).cc-focus:focus-visible {
+  outline: 2px solid var(--cc-blue);
+  outline-offset: 2px;
+  border-radius: var(--cc-radius-sm);
+}
+
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin:0; background:var(--cc-bg); color:var(--cc-text); font-family:var(--cc-font-body); -webkit-font-smoothing:antialiased; }
+  .ds-wrap { max-width:1080px; margin:0 auto; padding:var(--cc-space-12) var(--cc-space-8) var(--cc-space-20); }
+  .ds-head { border-bottom:1px solid var(--cc-border); padding-bottom:var(--cc-space-6); margin-bottom:var(--cc-space-10); }
+  .ds-head h1 { font-family:var(--cc-font-title); font-size:34px; font-weight:700; letter-spacing:var(--cc-ls-tight); color:var(--cc-ink); margin:var(--cc-space-2) 0 var(--cc-space-3); }
+  .ds-head p { margin:0; max-width:62ch; font-size:var(--cc-size-body); line-height:var(--cc-lh-normal); color:var(--cc-text-muted); }
+  .ds-sec { margin-bottom:var(--cc-space-16); }
+  .ds-sec > h2 { font-family:var(--cc-font-subtitle); font-size:20px; font-weight:700; color:var(--cc-ink); margin:0 0 var(--cc-space-2); }
+  .ds-sec > .ds-note { margin:0 0 var(--cc-space-6); font-size:var(--cc-size-body-sm); line-height:var(--cc-lh-normal); color:var(--cc-text-muted); max-width:70ch; }
+  .ds-panel { border:1px solid var(--cc-border); border-radius:var(--cc-radius-lg); padding:var(--cc-space-8); background:var(--cc-white); }
+  .ds-panel + .ds-panel { margin-top:var(--cc-space-4); }
+  .ds-row { display:flex; flex-wrap:wrap; gap:var(--cc-space-4); align-items:center; }
+  .ds-col { display:flex; flex-direction:column; gap:var(--cc-space-4); }
+  .ds-label { font-family:var(--cc-font-subtitle); font-size:11px; font-weight:700; letter-spacing:var(--cc-ls-wide); text-transform:uppercase; color:var(--cc-slate-60); margin:0 0 var(--cc-space-3); }
+  code, .ds-code { font-family:var(--cc-font-mono); font-size:12px; background:var(--cc-mist); color:var(--cc-slate); padding:2px 6px; border-radius:var(--cc-radius-sm); }
+  .ds-do-dont { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--cc-space-4); }
+  .ds-do, .ds-dont { border-radius:var(--cc-radius-md); padding:var(--cc-space-4) var(--cc-space-5); font-size:var(--cc-size-body-sm); line-height:var(--cc-lh-normal); }
+  .ds-do { background:var(--cc-success-tint); border-left:3px solid var(--cc-success); }
+  .ds-dont { background:var(--cc-danger-tint); border-left:3px solid var(--cc-danger); }
+  .ds-do b, .ds-dont b { display:block; font-family:var(--cc-font-subtitle); font-size:11px; letter-spacing:var(--cc-ls-wide); text-transform:uppercase; margin-bottom:var(--cc-space-2); }
+  .ds-do b { color:var(--cc-success); } .ds-dont b { color:var(--cc-danger); }
+
+
+  .sp-row { display:grid; grid-template-columns:150px 1fr 60px; align-items:center; gap:var(--cc-space-4); padding:var(--cc-space-2) 0; }
+  .sp-bar { height:16px; background:var(--cc-blue); border-radius:2px; }
+  .sp-row span { font-family:var(--cc-font-mono); font-size:12px; color:var(--cc-text-muted); }
+  .rd-grid, .sh-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--cc-space-4); }
+  .rd, .sh { border:1px solid var(--cc-border); border-radius:var(--cc-radius-md); padding:var(--cc-space-5); text-align:center; background:var(--cc-white); display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .rd-box { width:72px; height:72px; background:var(--cc-sage); }
+  .sh { background:var(--cc-bone); }
+  .sh-box { width:88px; height:56px; background:var(--cc-white); border-radius:var(--cc-radius-md); }
+  .rd span { font-family:var(--cc-font-mono); font-size:11px; color:var(--cc-text-muted); }
+  .grid-demo { display:grid; grid-template-columns:repeat(12,1fr); gap:var(--cc-space-6); }
+  .gcell { height:64px; background:var(--cc-blue-tint); border-radius:var(--cc-radius-sm); }
+
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <header class="ds-head">
+    <div class="cc-eyebrow">Chaparral Creative — Layout</div>
+    <h1>Spacing, radius &amp; elevation</h1>
+    <p>A 4px spacing scale, five radius steps, four ink-tinted elevations and a 12-column container grid.</p>
+  </header>
+
+  <section class="ds-sec">
+    <h2>Spacing scale</h2>
+    <p class="ds-note">A 4px base. Every margin, padding and gap in the system resolves to one of these steps — no arbitrary values. Steps 4, 6 and 8 do most of the work inside components; 12, 16 and 20 separate sections.</p>
+    <div class="ds-panel"><div class="sp-row"><code>--cc-space-1</code><div class="sp-bar" style="width:4px;"></div><span>4px</span></div><div class="sp-row"><code>--cc-space-2</code><div class="sp-bar" style="width:8px;"></div><span>8px</span></div><div class="sp-row"><code>--cc-space-3</code><div class="sp-bar" style="width:12px;"></div><span>12px</span></div><div class="sp-row"><code>--cc-space-4</code><div class="sp-bar" style="width:16px;"></div><span>16px</span></div><div class="sp-row"><code>--cc-space-5</code><div class="sp-bar" style="width:20px;"></div><span>20px</span></div><div class="sp-row"><code>--cc-space-6</code><div class="sp-bar" style="width:24px;"></div><span>24px</span></div><div class="sp-row"><code>--cc-space-8</code><div class="sp-bar" style="width:32px;"></div><span>32px</span></div><div class="sp-row"><code>--cc-space-10</code><div class="sp-bar" style="width:40px;"></div><span>40px</span></div><div class="sp-row"><code>--cc-space-12</code><div class="sp-bar" style="width:48px;"></div><span>48px</span></div><div class="sp-row"><code>--cc-space-16</code><div class="sp-bar" style="width:64px;"></div><span>64px</span></div><div class="sp-row"><code>--cc-space-20</code><div class="sp-bar" style="width:80px;"></div><span>80px</span></div><div class="sp-row"><code>--cc-space-24</code><div class="sp-bar" style="width:96px;"></div><span>96px</span></div></div>
+  </section>
+
+  <section class="ds-sec">
+    <h2>Corner radius</h2>
+    <p class="ds-note">Chaparral's mark is angular, so the interface stays restrained: <code>md</code> for cards and inputs, <code>full</code> for pills and avatars. <code>xl</code> is reserved for large feature panels.</p>
+    <div class="rd-grid"><div class="rd"><div class="rd-box" style="border-radius:4px;"></div><code>--cc-radius-sm</code><span>4px</span></div><div class="rd"><div class="rd-box" style="border-radius:8px;"></div><code>--cc-radius-md</code><span>8px</span></div><div class="rd"><div class="rd-box" style="border-radius:12px;"></div><code>--cc-radius-lg</code><span>12px</span></div><div class="rd"><div class="rd-box" style="border-radius:20px;"></div><code>--cc-radius-xl</code><span>20px</span></div><div class="rd"><div class="rd-box" style="border-radius:999px;"></div><code>--cc-radius-full</code><span>999px</span></div></div>
+  </section>
+
+  <section class="ds-sec">
+    <h2>Elevation</h2>
+    <p class="ds-note">Shadows are tinted with Chaparral Ink rather than pure black, so they read as part of the palette. Use sparingly — one elevated layer per view.</p>
+    <div class="sh-grid"><div class="sh"><div class="sh-box" style="box-shadow:0 1px 2px rgba(18,11,71,.06);"></div><code>--cc-shadow-sm</code></div><div class="sh"><div class="sh-box" style="box-shadow:0 2px 8px rgba(18,11,71,.08);"></div><code>--cc-shadow-md</code></div><div class="sh"><div class="sh-box" style="box-shadow:0 8px 24px rgba(18,11,71,.10);"></div><code>--cc-shadow-lg</code></div><div class="sh"><div class="sh-box" style="box-shadow:0 16px 48px rgba(18,11,71,.14);"></div><code>--cc-shadow-xl</code></div></div>
+  </section>
+
+  <section class="ds-sec">
+    <h2>Layout</h2>
+    <p class="ds-note">Container maxes out at 1200px with a 24px gutter. Breakpoints: 480 / 768 / 1024 / 1280.</p>
+    <div class="ds-panel">
+      <div class="grid-demo"><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div><div class="gcell"></div></div>
+      <p class="cc-body-sm" style="margin:16px 0 0;color:var(--cc-text-muted);">12 columns, 24px gutter. Collapses to 6 at 768px and 4 at 480px.</p>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
