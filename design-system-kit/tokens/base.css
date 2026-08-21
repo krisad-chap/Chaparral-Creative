@@ -1,0 +1,11 @@
+/* Chaparral Creative — page defaults and focus. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--cc-bg); color: var(--cc-text); font-family: var(--cc-font-body); font-size: var(--cc-size-body); line-height: var(--cc-lh-normal); -webkit-font-smoothing: antialiased; }
+a { color: var(--cc-blue); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--cc-blue-press); text-decoration-thickness: 2px; }
+.cc-focusable:focus-visible,
+:where(button, a, input, select, textarea).cc-focus:focus-visible {
+  outline: 2px solid var(--cc-blue);
+  outline-offset: 2px;
+  border-radius: var(--cc-radius-sm);
+}
