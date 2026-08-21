@@ -1,0 +1,39 @@
+/* Chaparral Creative — spacing, radius, elevation, motion, layout (all derived). */
+:root {
+  /* --- Spacing (4px base) --- */
+  --cc-space-1:  4px;
+  --cc-space-2:  8px;
+  --cc-space-3:  12px;
+  --cc-space-4:  16px;
+  --cc-space-5:  20px;
+  --cc-space-6:  24px;
+  --cc-space-8:  32px;
+  --cc-space-10: 40px;
+  --cc-space-12: 48px;
+  --cc-space-16: 64px;
+  --cc-space-20: 80px;
+  --cc-space-24: 96px;
+
+  /* --- Radius --- */
+  --cc-radius-sm:   4px;
+  --cc-radius-md:   8px;
+  --cc-radius-lg:   12px;
+  --cc-radius-xl:   20px;
+  --cc-radius-full: 999px;
+
+  /* --- Elevation --- */
+  --cc-shadow-sm: 0 1px 2px rgba(18, 11, 71, 0.06);
+  --cc-shadow-md: 0 2px 8px rgba(18, 11, 71, 0.08);
+  --cc-shadow-lg: 0 8px 24px rgba(18, 11, 71, 0.10);
+  --cc-shadow-xl: 0 16px 48px rgba(18, 11, 71, 0.14);
+
+  /* --- Motion --- */
+  --cc-ease:      cubic-bezier(0.2, 0, 0.2, 1); /* @kind other */
+  --cc-dur-fast:  120ms; /* @kind other */
+  --cc-dur-base:  200ms; /* @kind other */
+  --cc-dur-slow:  320ms; /* @kind other */
+
+  /* --- Layout --- */
+  --cc-container: 1200px;
+  --cc-gutter:    var(--cc-space-6);
+}
