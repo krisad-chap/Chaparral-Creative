@@ -1,0 +1,47 @@
+/* Chaparral Creative — colour tokens.
+   Source: Canva Brand Kit "Chaparral Creative Brand Kit".
+   (canva) = verbatim from the kit. (derived) = added to complete the system. */
+:root {
+  /* --- Brand colour (canva) --- */
+  --cc-ink:            #120b47;
+  --cc-blue:           #3498db;
+  --cc-slate:          #2c3e50;
+  --cc-sage:           #3f5d5f;
+
+  /* --- Neutrals (canva) --- */
+  --cc-white:          #ffffff;
+  --cc-bone:           #f1f1ef;
+  --cc-mist:           #ecf0f1;
+
+  /* --- Extended ramp (derived) --- */
+  --cc-ink-90:         #231a56;
+  --cc-ink-70:         #453d74;
+  --cc-blue-hover:     #2b7fbd;
+  --cc-blue-press:     #22689b;
+  --cc-blue-tint:      #eaf4fb;
+  --cc-sage-tint:      #eaefee;
+  --cc-slate-60:       #697786;  /* 4.6:1 on white — AA */
+  --cc-slate-40:       #9aa6b2;  /* decorative + disabled only — below AA */
+  --cc-border:         #dfe4e6;
+
+  /* --- Status (derived, except info) --- */
+  --cc-success:        #2d7a59;
+  --cc-success-tint:   #e8f3ee;
+  --cc-warning:        #98641a;
+  --cc-warning-tint:   #fdf3e2;
+  --cc-danger:         #c0392b;
+  --cc-danger-tint:    #fbeceb;
+  --cc-info:           #3498db;
+  --cc-info-tint:      #eaf4fb;
+
+  /* --- Semantic aliases --- */
+  --cc-bg:             var(--cc-white);
+  --cc-bg-subtle:      var(--cc-bone);
+  --cc-bg-inverse:     var(--cc-ink);
+  --cc-text:           var(--cc-slate);
+  --cc-text-strong:    var(--cc-ink);
+  --cc-text-muted:     var(--cc-slate-60);
+  --cc-text-inverse:   var(--cc-white);
+  --cc-action:         var(--cc-blue);
+  --cc-accent:         var(--cc-sage);
+}
