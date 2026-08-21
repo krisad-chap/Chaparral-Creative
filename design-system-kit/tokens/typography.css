@@ -1,0 +1,37 @@
+/* Chaparral Creative — type tokens and base type styles. */
+:root {
+  /* --- Families (canva) --- */
+  --cc-font-title:      'Poppins', 'Montserrat', system-ui, sans-serif;
+  --cc-font-subtitle:   'Montserrat', system-ui, sans-serif;
+  --cc-font-subheading: 'Proxima Nova', 'Montserrat', system-ui, sans-serif;
+  --cc-font-body:       'Merriweather Sans', system-ui, sans-serif;
+  --cc-font-mono:       ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* --- Sizes --- */
+  --cc-size-display:    56px;  /* derived */
+  --cc-size-title:      42px;  /* canva   */
+  --cc-size-subtitle:   36px;  /* canva   */
+  --cc-size-subheading: 24px;  /* canva   */
+  --cc-size-body-lg:    18px;  /* derived */
+  --cc-size-body:       16px;  /* canva   */
+  --cc-size-body-sm:    14px;  /* derived */
+  --cc-size-caption:    12px;  /* derived */
+
+  /* --- Rhythm --- */
+  --cc-lh-tight:   1.15; /* @kind other */
+  --cc-lh-snug:    1.25; /* @kind other */
+  --cc-lh-normal:  1.6; /* @kind other */
+  --cc-lh-relaxed: 1.75; /* @kind other */
+  --cc-ls-tight:   -0.02em;
+  --cc-ls-wide:    0.08em;
+}
+
+.cc-display    { font-family: var(--cc-font-title); font-size: var(--cc-size-display); font-weight: 700; line-height: var(--cc-lh-tight); letter-spacing: var(--cc-ls-tight); color: var(--cc-text-strong); }
+.cc-title      { font-family: var(--cc-font-title); font-size: var(--cc-size-title); font-weight: 700; line-height: var(--cc-lh-tight); letter-spacing: var(--cc-ls-tight); color: var(--cc-text-strong); }
+.cc-subtitle   { font-family: var(--cc-font-subtitle); font-size: var(--cc-size-subtitle); font-weight: 600; line-height: var(--cc-lh-snug); color: var(--cc-text-strong); }
+.cc-subheading { font-family: var(--cc-font-subheading); font-size: var(--cc-size-subheading); font-weight: 600; line-height: var(--cc-lh-snug); color: var(--cc-text-strong); }
+.cc-body       { font-family: var(--cc-font-body); font-size: var(--cc-size-body); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text); }
+.cc-body-lg    { font-family: var(--cc-font-body); font-size: var(--cc-size-body-lg); font-weight: 400; line-height: var(--cc-lh-relaxed); color: var(--cc-text); }
+.cc-body-sm    { font-family: var(--cc-font-body); font-size: var(--cc-size-body-sm); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text); }
+.cc-caption    { font-family: var(--cc-font-body); font-size: var(--cc-size-caption); font-weight: 400; line-height: var(--cc-lh-normal); color: var(--cc-text-muted); }
+.cc-eyebrow    { font-family: var(--cc-font-subtitle); font-size: var(--cc-size-caption); font-weight: 700; line-height: 1; letter-spacing: var(--cc-ls-wide); text-transform: uppercase; color: var(--cc-accent); }
